@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical" >
+
+	<!-- Current absolute path -->
+
+   	<TextView
+   	    android:id="@+id/mPath"
+   	    android:layout_width="fill_parent"
+   	    android:layout_height="wrap_content"
+   	    android:padding="5dp"
+   	    android:textColor="@color/black"
+   	    android:textSize="18sp" />
+
+    <!-- Current File Explorer Hierarchy -->
+	<ListView
+		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:id="@android:id/list"
+	/>
+
+	            <Button
+                android:id="@+id/button_bace"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+
+
+                android:text="@string/tv_return" />
+
+</RelativeLayout>

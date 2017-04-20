@@ -1,0 +1,486 @@
+<resources>
+    <string name="app_name">盘点机</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="wrong_version">wrong version</string>
+
+    //各个需要string的文字
+    <string name="setting_adduser_btn_text">账号添加</string>
+    <string name="setting_revise_btn_text">修改密码</string>
+    <string name="setting_resetdata_btn_text">数据初始化</string>
+    <string name="setting_changeuser_btn_text">切换用户</string>
+    <string name="setting_printer_btn_text">打印</string>
+    <string name="action_settings">Settings</string>
+    <string name="has_paired">已配对</string>
+    <string name="scanning">扫描设备中…</string>
+
+
+
+    <string-array name="interface_type">
+        <item>Bluetooth</item>
+        <item>USB</item>
+        <item>Wifi</item>
+        <item>Serial port</item>
+    </string-array>
+
+
+    <string name="help">1.输入打印机名称--&amp;gt;打开(只能打开已配对的设备)\n
+    					2.菜单--&amp;gt;打开连接(可打开已配对设备与新设备)</string>
+        <string name="input_printer_name">打印机名称</string>
+        <!--BTPrinterDemo-->
+        <string name="not_connected">请先连接蓝牙打印机（菜单-&amp;gt;连接）</string>
+        <string name="bt_not_enabled">蓝牙没有启动</string>
+        <string name="bt_has_on">蓝牙已打开</string>
+        <string name="bt_has_off">蓝牙已关闭</string>
+        <string name="bt_print_success">打印成功</string>
+        <string name="bt_print_failed">打印失败</string>
+        <string name="bt_connecting">正在连接..</string>
+        <string name="bt_connect_success">连接成功..</string>
+        <string name="bt_connect_failed">连接失败</string>
+        <string name="bt_connect_closed">连接已关闭</string>
+        <string name="title_connecting">正在连接…</string>
+        <string name="title_connected">已连接</string>
+        <string name="title_not_connected">未连接</string>
+        <!--  DeviceListActivity -->
+
+        <string name="select_device">请选择要连接的设备</string>
+        <string name="none_paired">没有匹配的设备</string>
+
+        <string name="not_paired">未配对</string>
+        <string name="rePaire_connect">重新配对并连接</string>
+        <string name="unpair">取消配对</string>
+        <string name="paire_connect">配对并连接</string>
+        <string name="connect_paired">连接</string>
+        <string name="select_options">选择操作</string>
+        <string name="none_found">没有找到设备</string>
+        <string name="no_bounded_device">未找到名称以 %s 开头的设备</string>
+        <string name="title_paired_devices">已配对的设备</string>
+        <string name="title_other_devices">其它可用设备</string>
+        <string name="button_scan">扫描新设备</string>
+        <!-- Options Menu -->
+        <string name="connect">打开连接</string>
+        <string name="disconnect">断开连接</string>
+        <!-- main.xml -->
+        <string name="edit_hint">打印机名称(如T9)</string>
+        <string name="print_text">打印文本</string>
+        <string name="print_table">打印表格</string>
+        <string name="print_image">打印图片</string>
+        <string name="print_custom_image">打印自定义图形</string>
+        <string name="print_note">打印小票</string>
+        <string name="print_title">打印标题</string>
+        <string name="bar_code_hint">输入条码，例如:No.123456</string>
+        <string name="print_bar_code">打印条码</string>
+        <string name="open_file">打开文件</string>
+        <string name="save_file">保存文件</string>
+        <string name="save_as_file">另存文件</string>
+        <string name="print_file">打印文件</string>
+        <string name="save_ok">确定</string>
+        <string name="save_cancel">取消</string>
+        <string name="toast_input_name">请输入文件名!</string>
+        <string name="toast_save_null">请勿保存空文件!</string>
+        <string name="toast_print_null">请勿打印空文件!</string>
+        <string name="toast_save_success">保存成功!</string>
+        <string name="input_file_name">请输入文件名称:</string>
+        <string name="back_to_root">返回根目录…</string>
+        <string name="back_to_pre">返回上一级…</string>
+        <string name="file_manager">文件管理</string>
+        <string name="editText_print">文本打印</string>
+    <string name="example_text">Android-SDK 是提供给用户在Android系统下进行二次开发的软件开发工具包。
+该软件开发工具包采用蓝牙通信协议，
+适合于具有蓝牙接口的Android只能设备开发应用程序使用，
+如HTC、Motorola、Samsung 等品牌的手机和Android 系统的平板电脑。
+该软件开发工具包是基于ESC/POS 命令标准，
+具有蓝牙功能的打印机都适合作为本系统的打印设备，
+典型的应用是蓝牙手机+便携打印机构成移动打印终端，广泛应用在具有移动打印需求的领域。</string>
+        <string name="company_name">打印机公司</string>
+        <string name="shop_company_title">宁波月湖店</string>
+        <string name="shop_num">门店号：</string>
+        <string name="shop_note_num">单据号：</string>
+        <string name="shop_cashier_num">收银员：</string>
+        <string name="shop_receipt_date">单据日期：</string>
+        <string name="shop_print_time">打印时间：</string>
+        <string name="shop_goods_number">数量：</string>
+        <string name="shop_goods_total_price">总计：</string>
+        <string name="shop_payment">付款：</string>
+        <string name="shop_change">找零：</string>
+        <string name="shop_company_name">公司名称：江苏某某家居用品有限公司</string>
+        <string name="shop_company_site">公司网址：</string>
+        <string name="shop_company_address">地址：江苏省宁波市某某路某某号</string>
+        <string name="shop_company_tel">电话：</string>
+        <string name="shop_Service_Line">服务专线：</string>
+        <string name="shop_thanks">谢谢惠顾,欢迎再次光临！</string>
+        <string name="shop_demo">Demo 版本！</string>
+        <string name="note_title">品名;数量;单价;金额</string>
+        <string name="coffee">咖啡</string>
+        <string name="tableware">消毒餐具</string>
+        <string name="peanuts">油炸花生米</string>
+        <string name="cucumber">蒜泥黄瓜</string>
+        <string name="frog">干锅田鸡</string>
+        <string name="rice">米饭</string>
+        <string name="company_sub_title">专注，可靠，中国特种打印机优秀品牌</string>
+        <!--<string name="company_logo_all_title">有logo,主标题和副标题:</string>
+        <string name="company_logo_sub_title">有logo和副标题:</string>
+        <string name="company_logo_title">有logo和主标题:</string>
+        <string name="company_all_title">有主标题和副标题:</string> -->
+        <string name="bags">保鲜袋</string>
+        <string name="umbrella">雨伞</string>
+        <string name="hook">铁丝挂钩</string>
+        <string name="choose_barcode_type">条码类型:</string>
+        <string name="choose_paper_width">纸张宽度:</string>
+        <string name="choose_printer_type">打印机类型:</string>
+        <string name="choose_Encoding">编码方式:</string>
+        <string name="printer_type_remin">热敏</string>
+        <string name="printer_type_styuls">针打</string>
+        <string name="usb">usb</string>
+        <string name="bluetooth">bluetooth</string>
+        <string name="wifi">wifi</string>
+        <string name="shop_receipt_num">单据</string>
+        <string name="print_codepage">打印代码页</string>
+        <string name="print_biaoqian">打印标签</string>
+        <string name="btn_help">开发帮助</string>
+        <string name="btn_exit">退出应用</string>
+        <string name="button_back">返回</string>
+        <string-array name="codepage">
+            <item>CP437 [U.S.A., Standard Europe]</item>
+            <item>Katakana</item>
+            <item>CP850 [Multilingual]</item>
+            <item>CP860 [Portuguese]</item>
+            <item>CP863 [Canadian-French]</item>
+            <item>CP865 [Nordic]</item>
+            <item>WCP1251 [Cyrillic]</item>
+            <item>CP866 Cyrilliec #2</item>
+            <item>MIK[Cyrillic /Bulgarian]</item>
+            <item>CP755 [East Europe，Latvian 2]</item>
+            <item>Iran</item>
+            <item>reserve</item>
+            <item>reserve</item>
+            <item>reserve</item>
+            <item>reserve</item>
+            <item>CP862 [Hebrew]</item>
+            <item>WCP1252 Latin I</item>
+            <item>WCP1253 [Greek]</item>
+            <item>CP852 [Latina 2]</item>
+            <item>CP858 Multilingual Latin Ⅰ+Euro)</item>
+            <item>Iran II</item>
+            <item>Latvian</item>
+            <item>CP864 [Arabic]</item>
+            <item>ISO–8859–1 [West Europe]</item>
+            <item>CP737 [Greek]</item>
+            <item>WCP1257 [Baltic]</item>
+            <item>Thai</item>
+            <item>CP720[Arabic]</item>
+            <item>CP855</item>
+            <item>CP857[Turkish]</item>
+            <item>WCP1250[Central Eurpoe]</item>
+            <item>CP775</item>
+            <item>WCP1254[Turkish]</item>
+            <item>WCP1255[Hebrew]</item>
+            <item>WCP1256[Arabic]</item>
+            <item>WCP1258[Vietnam]</item>
+            <item>ISO–8859–2[Latin 2]</item>
+            <item>ISO–8859–3[Latin 3]</item>
+            <item>ISO–8859–4[Baltic]</item>
+            <item>ISO–8859–5[Cyrillic]</item>
+            <item>ISO–8859–6[Arabic]</item>
+            <item>ISO–8859–7[Greek]</item>
+            <item>ISO–8859–8[Hebrew]</item>
+            <item>ISO–8859–9[Turkish]</item>
+            <item>ISO–8859–15 [Latin 3]</item>
+            <item>Thai2</item>
+            <item>CP856</item>
+            <item>全选</item>
+        </string-array>
+        <string name="button_connect_principle">连接原理说明</string>
+        <string name="button_print_principle">打印原理说明</string>
+        <string name="button_recon_listen">蓝牙自动回连</string>
+        <string name="button_discon_listen">蓝牙断线监测</string>
+        <string name="button_address_bouds">蓝牙快速连接</string>
+        <string-array name="barcode2">
+            <item>PDF417</item>
+            <item>QRCODE</item>
+            <item>DATAMATRIX</item>
+            <item>全选</item>
+        </string-array>
+        <string-array name="barcode1">
+            <item>CODE39</item>
+            <item>CODEBAR</item>
+            <item>ITF</item>
+            <item>CODE93</item>
+            <item>CODE128</item>
+            <item>UPC-A</item>
+            <item>UPC-E</item>
+            <item>EAN13</item>
+            <item>EAN8</item>
+            <item>全选</item>
+        </string-array>
+        <string name="no_conn_address">地址：未连接</string>
+        <string name="no_conn_name">名称：未连接</string>
+        <string name="str_address">地址：</string>
+        <string name="str_name">名称：</string>
+        <string name="str_message">提示：</string>
+        <string name="str_connlast">是否连接蓝牙设备?</string>
+        <string name="yesconn">确认连接</string>
+        <string name="str_resel">搜索设备</string>
+        <string name="str_wifi_now">当前连接的wifi是：</string>
+        <string name="str_wifi_no">尚未连接到任何wifi网络</string>
+        <string name="print">打印</string>
+        <string name="conn_failed">连接失败</string>
+        <string name="conn_closed">连接关闭</string>
+        <string name="conn_no">没有可连接的设备</string>
+        <string name="password">请输入密码：</string>
+        <string name="cancel">取消</string>
+        <string name="barcode">请选择条码类型：</string>
+        <string name="codepage">请选择代码页类型：</string>
+        <string name="str_image">打印图片效果展示：</string>
+        <string name="str_canvas">打印画布效果展示：</string>
+        <string name="str_file">打印文件效果展示：</string>
+        <string name="str_label">打印标签效果展示：</string>
+        <string name="str_text">打印文本效果展示：</string>
+        <string name="str_text_left">文字居左效果演示abc123：</string>
+        <string name="str_text_right">文字居右效果演示abc123：</string>
+        <string name="str_text_center">文字居中效果演示abc123：</string>
+        <string name="str_text_strong">文字加粗效果演示abc123：</string>
+        <string name="str_text_underline">文字下划线效果演示abc123：</string>
+        <string name="str_text_height">同行不同高效果演示：：</string>
+        <string name="str_note">打印小票效果演示：</string>
+        <string name="str_show">演示：</string>
+        <string name="note_label">此项功能仅支持标签打印机。</string>
+        <string name="times">倍</string>
+        <string name="bigger">放大</string>
+        <string name="bigger1">倍效果演示abc123</string>
+
+
+    <!-- 蓝牙打印机所需string -->
+
+
+    <string name="connecting">连接中</string>
+
+    <string name="please_wait">请稍候</string>
+
+
+
+
+    <!-- 优化程序所需string -->
+
+    <string name="import_path">/sdcard/CountingMachine/import</string>
+    <string name="export_path">/sdcard/CountingMachine/export</string>
+    <string name="export_path_">/sdcard/CountingMachine/export/</string>
+    <string name="txt">.txt</string>
+    <string name="rb_search">搜索</string>
+    <string name="rb_add">添加</string>
+    <string name="btn_sure">确认</string>
+    <string name="tv_checklist">盘点单:</string>
+    <string name="b22">B22</string>
+    <string name="tv_detail">明细:</string>
+    <string name="_1">1</string>
+    <string name="tv_count">数量:</string>
+    <string name="_0">0</string>
+    <string name="btn_sure_change">确认修改</string>
+    <string name="tv_check_goods">盘点商品</string>
+    <string name="tv_add_floor">添加货层</string>
+    <string name="et_imput_scan">扫描或输入货号</string>
+    <string name="tv_search_c">查找</string>
+    <string name="tv_save">保存</string>
+    <string name="tv_counts">数量:</string>
+    <string name="btn_new_list">新建表单</string>
+    <string name="_12">12</string>
+    <string name="tv_open_content">打开连接</string>
+    <string name="tv_time">时间</string>
+    <string name="tv_detele">删</string>
+    <string name="tv_goods_name">商品名称</string>
+    <string name="_000000000000">000000000000</string>
+    <string name="_10">10</string>
+    <string name="tv_sub_jian">－</string>
+    <string name="tv_add_jia">＋</string>
+    <string name="tv_return">返回</string>
+    <string name="tv_goods">商品</string>
+    <string name="tv_load">加 载</string>
+    <string name="tv_import">导 入</string>
+    <string name="tv_count_g">品数</string>
+    <string name="tv_goods_names">商品名称</string>
+    <string name="tv_goods_number">货号</string>
+    <string name="tv_goods_number_">货 号:</string>
+    <string name="_1234567890">1234567890</string>
+    <string name="tv_goods_name_">品 名:</string>
+    <string name="tv_one_two_three">一二三</string>
+    <string name="tv_price">零售价:</string>
+    <string name="btn_return">返回</string>
+    <string name="_2016_01_02_17_51_12">2016–01–02 17:51:12</string>
+    <string name="_1_0_0">1.0.0</string>
+    <string name="admin">用户名(初始admin)</string>
+    <string name="_00000000">密码(初始00000000)</string>
+    <string name="s_start">启用</string>
+    <string name="tv_remember_pswd">记住密码</string>
+    <string name="tv_login_zidong">自动登录</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_exit_">退出</string>
+    <string name="tv_user_name">用 户 名</string>
+    <string name="tv_pass_word">密 码</string>
+    <string name="tv_sure_pswd">确认密码</string>
+    <string name="btn_update">提交</string>
+    <string name="btn_return_s">返回</string>
+    <string name="tv_user_now">当前用户名</string>
+    <string name="admin_">admin</string>
+    <string name="tv_old_pswd">原 密 码</string>
+    <string name="tv_new_pswd">新 密 码</string>
+    <string name="tv_sure_new_pswd">确认新密码</string>
+    <string name="goods_">商品</string>
+    <string name="check_">盘点</string>
+    <string name="change_">修改</string>
+    <string name="setting_">设置</string>
+    <string name="out_">退出</string>
+    <string name="add_null_input">存在空白输入项,请填写完整</string>
+    <string name="add_defferent_input">两次输入的密码不相同,请重新输入</string>
+    <string name="add_had_username">用户名已存在,请重新输入</string>
+    <string name="add_newuser_success">新用户创建成功</string>
+    <string name="change_print_button">打印提示</string>
+    <string name="change_new_button">表单提示</string>
+    <string name="change_list_dialog">操作盘点表</string>
+    <string name="change_export_button">导出</string>
+    <string name="change_del_button">删除</string>
+    <string name="change_new_toast">新建表单功能位于盘点单页面,修改页不提供新建表单功能</string>
+    <string name="change_print_toast">打印功能位于盘点单页面,修改页不提供打印功能</string>
+    <string name="change_export_success">导出成功</string>
+    <string name="change_del_list">已删除盘点单</string>
+    <string name="change_number_input">请输入要修改的货号</string>
+    <string name="change_null_good">本表单不存在此货物</string>
+    <string name="change_number_jump">已跳转至此货号</string>
+    <string name="change_add_number">请输入要添加的货号</string>
+    <string name="change_new_number">表单中没有此货号,自动识别为表单外商品</string>
+    <string name="number_1">1</string>
+    <string name="change_out_list">表单外商品</string>
+    <string name="change_null">无</string>
+    <string name="change_add_success">添加表单外商品成功</string>
+    <string name="change_success_add">添加成功</string>
+    <string name="change_change_success">修改成功</string>
+    <string name="change_title_dialog">确定要删除并保存吗</string>
+    <string name="change_sure">确定</string>
+    <string name="change_miss">取消</string>
+    <string name="change_del_success">删除成功</string>
+    <string name="check_blue_print">蓝牙打印机</string>
+    <string name="check_title_dialog">操作盘点单</string>
+    <string name="check_print">打印</string>
+    <string name="check_export">导出</string>
+    <string name="check_del">删除</string>
+    <string name="check_cut">断开了</string>
+    <string name="check_new_list">请输入新建的盘点单名</string>
+    <string name="check_sure">确定</string>
+    <string name="check_miss">取消</string>
+    <string name="check_connect">isConnected:</string>
+    <string name="check_first_blue">您是第一次启动程序，请选择重新搜索连接！</string>
+    <string name="check_success_blue">"createBond is success? : "</string>
+    <string name="check_bound">bounding......</string>
+    <string name="check_bound_success">bound success</string>
+    <string name="check_bound_cancel">bound cancel</string>
+    <string name="check_export_success">导出成功</string>
+    <string name="check_del_list">已删除盘点单</string>
+    <string name="check_connect_fail">未连接蓝牙打印机</string>
+    <string name="check_print_success">打印成功</string>
+    <string name="check_had_name">已存在同名盘点单,请重新创建</string>
+    <string name="number_0">0</string>
+    <string name="check_new_success">创建成功</string>
+    <string name="check_connect_failed">连接失败!</string>
+    <string name="check_connect_close">连接关闭!</string>
+    <string name="check_print_good">打印机通信正常!</string>
+    <string name="check_print_notgood">打印机通信异常常，请检查蓝牙连接!</string>
+    <string name="check_paper_null">打印机缺纸!</string>
+    <string name="check_print_open">打印机开盖!</string>
+    <string name="check_get_savestate">getSaveState:  is  coming^^^^^</string>
+    <string name="check_is_connect">isConnected:</string>
+    <string name="check_module_name">设备名：</string>
+    <string name="check_module_address">设备地址:</string>
+    <string name="check_tag_name">fdh</string>
+    <string name="check_change_null">没有修改的内容</string>
+    <string name="check_success">盘点成功</string>
+    <string name="check_floor_input">请输入货层或要盘点的货号</string>
+    <string name="check_floor_found">已查找到此货层</string>
+    <string name="check_number_right">没有查询到此货号,请重新确认货号是否正确</string>
+    <string name="check_title_number">请输入货品个数</string>
+    <string name="check_sure_button">确定</string>
+    <string name="check_miss_button">取消</string>
+    <string name="check_del_ask">确定要删除</string>
+    <string name="check_ask_end">吗?</string>
+    <string name="sure">确定</string>
+    <string name="miss">取消</string>
+    <string name="check_del_success">删除成功</string>
+    <string name="check_input_number">请输入数量</string>
+    <string name="check_changed">已修改</string>
+    <string name="good_is_loading">正在加载</string>
+    <string name="good_wrong">错误</string>
+    <string name="good_failed">进入商品页失败</string>
+    <string name="good_input_filename">请输入文件名</string>
+    <string name="good_is_import">正在导入</string>
+    <string name="good_null_fail">文件不存在或内容错误</string>
+    <string name="good_count">count：</string>
+    <string name="re_null">存在空白输入项,请查看</string>
+    <string name="re_defferent">两次新密码输入不一致,请重新输入</string>
+    <string name="re_wrong">原密码不正确,请重新输入</string>
+    <string name="re_success">新密码设置成功</string>
+    <string name="set_clear">清空</string>
+    <string name="set_sure_ask">确定要清空所有数据吗?</string>
+    <string name="set_change_user">切换用户</string>
+    <string name="set_print">打印机</string>
+    <string name="set_clearing">正在清空,请稍候</string>
+    <string name="set_clear_yes">数据初始化完成</string>
+    <string name="main_counting">盘点机</string>
+    <string name="main_out_system">确定要退出程序吗</string>
+    <string name="main_dialog_message">请确认与蓝牙打印机已断开连接</string>
+    <string name="main_out">退出</string>
+    <string name="main_miss">取消</string>
+    <string name="goods">商品</string>
+    <string name="check">盘点</string>
+    <string name="change">修改</string>
+    <string name="setting">设置</string>
+    <string name="login_welcome">欢迎登陆,</string>
+    <string name="login_wrong_password">密码错误,请检查</string>
+    <string name="login_null_username">用户名不存在,请检查</string>
+    <string name="login_null_input">请检查是否存在空白输入项</string>
+    <string name="login_module_wrong">设备不匹配</string>
+    <string name="login_module_right">设备已匹配</string>
+    <string name="kt40q">kt40q</string>
+    <string name="kt55">kt55</string>
+    <string name="kt40">kt40</string>
+    <string name="change_name">修改表名</string>
+    <string name="b222">B22</string>
+    <string name="_2016_01_02_17_51_12_">2016–01–02 17:51:12</string>
+    <string name="b2222">B22</string>
+    <string name="password_again_2">重复输入密码</string>
+    <string name="password_input">输入密码</string>
+    <string name="old_password">输入当前密码</string>
+    <string name="new_password">输入新密码</string>
+    <string name="new_password_again">重复输入密码</string>
+    <string name="path_import">/sdcard/CountingMachine/import/</string>
+    <string name="input_username">输入用户名</string>
+    <string name="explore_check">一键导出</string>
+    <string name="del_check">一键删除</string>
+    <string name="toast_explore">一键导出功能位于盘点单页面，修改页不提供一键导出功能</string>
+    <string name="toast_del">一键删除功能位于盘点单页面，修改页不提供一键删除功能</string>
+    <string name="dialog_return">返回</string>
+    <string name="tip_explore">导出提示</string>
+    <string name="tip_del">删除提示</string>
+    <string name="dialog_change">修改页不提供删除导出等操作</string>
+    <string name="onekey_explore">一键导出</string>
+    <string name="onekey_del">一键删除</string>
+    <string name="dialog_sure">确定</string>
+    <string name="dialog_miss">取消</string>
+    <string name="dialog_title_name">修改盘点单表名</string>
+    <string name="dialog_title_explore">确认要导出所有盘点单吗？</string>
+    <string name="dialog_title_del">确认要删除所有盘点单吗？</string>
+    <string name="not_null">盘点单名称不能为空，请输入</string>
+    <string name="not_kongge">盘点单名字里不能包含空格，请检查并修改</string>
+    <string name="toast_name">已存在同名盘点单,请修改盘点单名称</string>
+    <string name="toast_success">修改成功</string>
+    <string name="success_title">导出成功，数据条数为：</string>
+    <string name="sure2">确认</string>
+    <string name="sure_del">确认要删除当前盘点单吗？</string>
+    <string name="del_all">已删除所有盘点单</string>
+    <string name="no_list">没有需要导出的盘点单</string>
+    <string name="failed">一键导出失败，请尝试单次导出</string>
+    <string name="explore_success">导出成功，导出了：</string>
+    <string name="end">个盘点单</string>
+    <string name="sure3">确认</string>
+    <string name="not_null2">盘点单名称不能为空，请输入</string>
+    <string name="not_kongge2">盘点单名字里不能包含空格，请检查并修改</string>
+
+
+</resources>

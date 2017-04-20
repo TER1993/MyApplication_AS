@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="bg_default">#FFBABABA</color>
+    <color name="bg_titlebar">#FF888888</color>
+    <color name="text_default">#FF505050</color>
+    <color name="text_alarm">#FF506650</color>
+    <color name="text_tip">#FFA0A0A0</color>
+    <color name="text_button">#FF3F3F3F</color>
+    <color name="text_blue">#0a0af5</color>
+    <color name="theme_style_old">#ff9900</color>
+    <color name="theme_style">#5496c2</color>
+
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="gray">#0fC9CACB</color>
+    <color name="deep_gray">#c0c0c0</color>
+    <color name="lightBlue">#E0FFFF</color>
+    <color name="blue_menu">#1C67AD</color>
+    <color name="blue_menu_press">#74B5DF</color>
+    <color name="title">#212121</color>
+    <color name="orange">#ff8000</color>
+    <color name="blue_button">#77cfe9</color>
+    <color name="red">#ff0000</color>
+    <color name="orange_2">#ff962d</color>
+    <color name="transparency">#b0000000</color>
+    <color name="green">#2a6fc3</color>
+
+</resources>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    <TextView
+        android:text="@string/tv_counts"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+
+        android:id="@+id/inventory_number_tv"
+        android:textSize="18sp"
+        android:text="@string/_12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/inventory_new_btn"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/btn_new_list"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_alibuybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/inventory_bluetooth_tv"
+            android:layout_marginRight="0dp"
+            android:layout_marginEnd="0dp"
+            android:text="@string/tv_open_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/bg_alibuybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+    </LinearLayout>
+
+
+
+
+    <ListView
+        android:id="@+id/inventory_list_lv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:id="@+id/inventory_del_tv"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/del_check"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_alibuybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/inventory_explore_btn"
+            android:text="@string/explore_check"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/bg_alibuybutton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

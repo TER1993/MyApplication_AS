@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/tv_goods_number_"
+            android:textSize="20sp"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:id="@+id/goods_num_tv"
+            android:text="@string/_1234567890"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="20sp"
+            android:text="@string/tv_goods_name_"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:id="@+id/goods_name_tv"
+            android:text="@string/tv_one_two_three"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="20sp"
+            android:text="@string/tv_price"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:id="@+id/goods_price_tv"
+            android:text="@string/_12"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/goods_message_btn"
+        android:layout_width="match_parent"
+        android:background="#7CCD7C"
+        android:text="@string/btn_return"
+        android:padding="13dp"
+        android:textColor="#000000"
+        android:textSize="23sp"
+        android:layout_marginTop="80dp"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>

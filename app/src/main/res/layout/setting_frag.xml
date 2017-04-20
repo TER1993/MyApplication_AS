@@ -1,0 +1,78 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.speedata.xu.myapplication.fragment.SettingFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <Button
+        android:padding="25dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+
+        android:id="@+id/setting_adduser_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_adduser_btn_text"
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+
+        />
+    <Button
+        android:padding="25dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/setting_revise_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_revise_btn_text"
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        />
+    <Button
+        android:padding="25dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/setting_resetdata_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_resetdata_btn_text"
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        />
+
+    <Button
+        android:visibility="gone"
+        android:padding="25dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/setting_printer_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_printer_btn_text"
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        />
+    <Button
+        android:padding="25dp"
+        android:textSize="15sp"
+        android:textColor="#000000"
+        android:id="@+id/setting_changeuser_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/setting_changeuser_btn_text"
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:background="@android:color/transparent"
+        />
+
+
+</LinearLayout>
+</FrameLayout>
