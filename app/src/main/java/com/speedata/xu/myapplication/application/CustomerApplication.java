@@ -38,8 +38,6 @@ public class CustomerApplication extends Application {
     }
 
 
-
-
     public String getID() {
         return mID;
     }
