@@ -481,6 +481,7 @@
     <string name="sure3">确认</string>
     <string name="not_null2">盘点单名称不能为空，请输入</string>
     <string name="not_kongge2">盘点单名字里不能包含空格，请检查并修改</string>
+    <string name="spda6735">spda6735</string>
 
 
 </resources>

@@ -65,13 +65,14 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
         if (android.os.Build.MODEL.equalsIgnoreCase(getString(R.string.kt40))
                 || android.os.Build.MODEL.equalsIgnoreCase(getString(R.string.kt55))
+                || android.os.Build.MODEL.equalsIgnoreCase(getString(R.string.spda6735))
                 || android.os.Build.MODEL.equalsIgnoreCase(getString(R.string.kt40q))) {
             Toast.makeText(mContext, "ok," + Build.MODEL
                     + getString(R.string.login_module_right), Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(mContext, Build.MODEL
                     + getString(R.string.login_module_wrong), Toast.LENGTH_SHORT).show();
-//            finish();
+            finish();
         }
 
         newFile();
