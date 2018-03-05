@@ -54,11 +54,13 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
         return holder.getConvertView();
     }
 
+
     public abstract void convert(ViewHolder helper, T item, int position);
 
     public void addItem(T item) {
         mDatas.add(item);
     }
+
 
 
 }

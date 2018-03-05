@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.fragment;
 
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,6 +18,8 @@ import com.speedata.xu.myapplication.db.dao.BaseInforDao;
 import com.speedata.xu.myapplication.db.dao.CheckDetailInforDao;
 import com.speedata.xu.myapplication.db.dao.CheckInforDao;
 import com.speedata.xu.myapplication.db.dao.FloorInforDao;
+
+import java.util.ArrayList;
 
 /**
  * Created by xu on 2016/4/7.
@@ -75,6 +78,7 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         } else if (v == btnResetData) {
             DialogButtonOnClickListener dialogButtonOnClickListener = new DialogButtonOnClickListener();
 
+
             mDialog = new AlertDialog.Builder(mActivity)
                     .setTitle(R.string.set_clear)
                     .setMessage(R.string.set_sure_ask)
@@ -123,6 +127,27 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
                     break;
             }
         }
+    }
+
+
+    /**
+     * 判断某个服务是否正在运行的方法
+     * <p>
+     * <p>
+     * 是包名+服务的类名（例如：net.loonggg.testbackstage.TestService）
+     *
+     * @return true代表正在运行，false代表服务没有正在运行
+     */
+    public static boolean isWorked(Context context, String name) {
+        ActivityManager myManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        assert myManager != null;
+        ArrayList<ActivityManager.RunningServiceInfo> runningService = (ArrayList<ActivityManager.RunningServiceInfo>) myManager.getRunningServices(30);
+        for (int i = 0; i < runningService.size(); i++) {
+            if (name.equals(runningService.get(i).service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

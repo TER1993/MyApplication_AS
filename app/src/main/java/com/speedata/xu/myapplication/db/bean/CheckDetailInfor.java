@@ -7,7 +7,7 @@ import com.elsw.base.db.orm.annotation.Table;
  * Created by Administrator on 2016/2/26.
  */
 @Table(name = "CheckDetailInfor")
-public  class CheckDetailInfor { //盘点明细表
+public  class  CheckDetailInfor { //盘点明细表
 
     @Column(name = "GoodsCount")
     private String GoodsCount; //货品数量
