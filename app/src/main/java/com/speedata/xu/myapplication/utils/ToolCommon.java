@@ -11,6 +11,7 @@ import android.view.inputmethod.InputMethodManager;
 
 import java.text.SimpleDateFormat;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 /**
@@ -35,7 +36,7 @@ import java.util.regex.Pattern;
  * ━━━━━━神兽出没━━━━━━
  *
  * @author Reginer on  2016/10/12 17:38.
- *         Description:操作方法
+ * Description:操作方法
  */
 public class ToolCommon {
 
@@ -64,7 +65,7 @@ public class ToolCommon {
      */
     public static void hideSoftInput(Context context, View view) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        Objects.requireNonNull(imm).hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     /**
@@ -107,7 +108,6 @@ public class ToolCommon {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
-
 
 
     /**

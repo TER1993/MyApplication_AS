@@ -22,13 +22,15 @@ import com.speedata.xu.myapplication.db.dao.FloorInforDao;
 import java.util.ArrayList;
 
 /**
- * Created by xu on 2016/4/7.
+ * @author xu
+ * @date 2016/4/7
  */
 public class SettingFragment extends BaseFragment implements View.OnClickListener {
     @Override
     public int setFragmentLayout() {
         return R.layout.setting_frag;
     }
+
     private Button btnAddUser;
     private Button btnRevise;
     private Button btnResetData;
@@ -53,11 +55,11 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
         checkInforDao = new CheckInforDao(mContext);
         floorInforDao = new FloorInforDao(mContext);
 
-        btnAddUser = (Button) view.findViewById(R.id.setting_adduser_btn);
-        btnRevise = (Button) view.findViewById(R.id.setting_revise_btn);
-        btnResetData = (Button) view.findViewById(R.id.setting_resetdata_btn);
-        btnChangeUser = (Button) view.findViewById(R.id.setting_changeuser_btn);
-        btnPrinter = (Button) view.findViewById(R.id.setting_printer_btn);
+        btnAddUser = view.findViewById(R.id.setting_adduser_btn);
+        btnRevise = view.findViewById(R.id.setting_revise_btn);
+        btnResetData = view.findViewById(R.id.setting_resetdata_btn);
+        btnChangeUser = view.findViewById(R.id.setting_changeuser_btn);
+        btnPrinter = view.findViewById(R.id.setting_printer_btn);
 
         btnAddUser.setOnClickListener(this);
         btnRevise.setOnClickListener(this);
@@ -85,7 +87,6 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
                     .setPositiveButton(R.string.sure, dialogButtonOnClickListener)
                     .setNegativeButton(R.string.miss, dialogButtonOnClickListener)
                     .show();
-
 
 
         } else if (v == btnChangeUser) {
@@ -124,6 +125,8 @@ public class SettingFragment extends BaseFragment implements View.OnClickListene
                     // 取消显示对话框
                     mDialog.dismiss();
 
+                    break;
+                default:
                     break;
             }
         }

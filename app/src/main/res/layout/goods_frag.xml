@@ -3,74 +3,76 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.speedata.xu.myapplication.fragment.GoodsFragment">
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:orientation="horizontal"
-        >
-        <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
-            android:text="@string/tv_goods"
-            android:textSize="25sp"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:layout_marginRight="30dp"
-            android:layout_marginEnd="30dp"
-            android:id="@+id/goods_scan_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_load"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/bg_alibuybutton" />
+            <TextView
 
-        <Button
-            android:id="@+id/goods_import_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tv_import"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/bg_alibuybutton" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tv_goods"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/goods_scan_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/bg_alibuybutton"
+                android:text="@string/tv_load"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/goods_import_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_alibuybutton"
+                android:text="@string/tv_import"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_count_g"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/goods_number_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:textSize="25sp" />
+
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/goods_list_lv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </ListView>
+
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="30dp">
-        <TextView
-            android:layout_width="70dp"
-            android:text="@string/tv_count_g"
-            android:textSize="25sp"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/goods_number_tv"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="@string/_0"
-            android:textSize="25sp"
-            android:layout_height="wrap_content" />
-
-
-    </LinearLayout>
-
-    <ListView
-        android:id="@+id/goods_list_lv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ListView>
-
-
-</LinearLayout>
 </FrameLayout>

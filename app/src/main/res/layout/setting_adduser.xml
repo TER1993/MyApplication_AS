@@ -3,106 +3,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.speedata.xu.myapplication.fragment.AddUserFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:padding="25dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:text="@string/tv_user_name"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            />
-        <EditText
-            android:minHeight="30dp"
-            android:id="@+id/adduser_username_et"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:hint="@string/input_username"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:background="#FFEC8B"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:padding="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:text="@string/tv_pass_word"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            />
+            android:orientation="horizontal"
+            android:padding="25dp">
 
-        <EditText
-            android:minHeight="30dp"
-            android:id="@+id/adduser_password_et"
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_user_name"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/adduser_username_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFEC8B"
+                android:hint="@string/input_username"
+                android:minHeight="30dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:hint="@string/password_input"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:background="#FFEC8B"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:padding="25dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textColor="#000000"
-            android:textSize="15sp"
-            android:text="@string/tv_sure_pswd"
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            />
-        <EditText
-            android:minHeight="30dp"
-            android:id="@+id/adduser_confirmpassword_et"
+            android:orientation="horizontal"
+            android:padding="25dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_pass_word"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/adduser_password_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFEC8B"
+                android:hint="@string/password_input"
+                android:minHeight="30dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:hint="@string/password_again_2"
+            android:orientation="horizontal"
+            android:padding="25dp">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_sure_pswd"
+                android:textColor="#000000"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/adduser_confirmpassword_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFEC8B"
+                android:hint="@string/password_again_2"
+                android:minHeight="30dp"
+                android:text=""
+                android:textColor="#000000"
+                android:textSize="20sp"
+                tools:ignore="Autofill,TextFields" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/adduser_submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#7CCD7C"
+            android:padding="15dp"
+            android:text="@string/btn_update"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/adduser_back_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#7CCD7C"
+            android:padding="15dp"
+            android:text="@string/btn_return_s"
             android:textColor="#000000"
-            android:textSize="20sp"
-            android:background="#FFEC8B"
-            />
+            android:textSize="20sp" />
+
+
     </LinearLayout>
-    <Button
-        android:id="@+id/adduser_submit_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/btn_update"
-        android:textSize="20sp"
-        android:padding="15dp"
-        android:background="#7CCD7C"
-        />
-
-    <Button
-        android:id="@+id/adduser_back_btn"
-        android:layout_width="match_parent"
-        android:background="#7CCD7C"
-        android:text="@string/btn_return_s"
-        android:padding="15dp"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:layout_height="wrap_content" />
-
-
-</LinearLayout>
 </FrameLayout>

@@ -1,6 +1,7 @@
 package com.speedata.xu.myapplication.fragment;
 
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -30,7 +31,8 @@ import java.util.List;
 
 
 /**
- * Created by xu on 2016/4/5.
+ * @author xu
+ * @date 2016/4/5
  */
 public class GoodsFragment extends BaseFragment implements View.OnClickListener {
 
@@ -59,14 +61,14 @@ public class GoodsFragment extends BaseFragment implements View.OnClickListener 
         goodsDetialList = new ArrayList<>();
         baseInforDao = new BaseInforDao(mContext);
         application = (CustomerApplication) mActivity.getApplication();
-        btnImport = (Button) view.findViewById(R.id.goods_import_btn);
+        btnImport = view.findViewById(R.id.goods_import_btn);
         btnImport.setOnClickListener(this);
-        btnScan = (Button) view.findViewById(R.id.goods_scan_btn);
+        btnScan = view.findViewById(R.id.goods_scan_btn);
         btnScan.setOnClickListener(this);
 
-        tvNum = (TextView) view.findViewById(R.id.goods_number_tv);
+        tvNum = view.findViewById(R.id.goods_number_tv);
 
-        lvgoods = (ListView) view.findViewById(R.id.goods_list_lv);
+        lvgoods = view.findViewById(R.id.goods_list_lv);
 
         goodsDetialList = application.getBaseInfor2();
         if (goodsDetialList == null) {
@@ -99,6 +101,7 @@ public class GoodsFragment extends BaseFragment implements View.OnClickListener 
             }
         });
     }
+
     private void setAdapterMethod() {
         int a = goodsDetialList.size();
         String b = a + "";
@@ -142,7 +145,7 @@ public class GoodsFragment extends BaseFragment implements View.OnClickListener 
 
         return goodsDetialList;
     }
-
+    @SuppressLint("HandlerLeak")
     private Handler ahandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -159,7 +162,6 @@ public class GoodsFragment extends BaseFragment implements View.OnClickListener 
             }
         }
     };
-
 
 
     @Override
@@ -198,6 +200,8 @@ public class GoodsFragment extends BaseFragment implements View.OnClickListener 
                     mDialog.dismiss();
 
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -219,7 +223,7 @@ public class GoodsFragment extends BaseFragment implements View.OnClickListener 
 
     }
 
-
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {

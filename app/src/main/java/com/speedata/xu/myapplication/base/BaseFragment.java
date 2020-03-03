@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.base;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -19,7 +20,9 @@ import com.speedata.xu.myapplication.R;
 import java.lang.reflect.Method;
 
 
-
+/**
+ * @author xuyan
+ */
 public abstract class BaseFragment extends Fragment implements IBaseFragment {
     private static final int containerViewId = R.id.container;
     private static Toast mToast;
@@ -28,7 +31,6 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
      **/
     public MainActivity mActivity;
     public SharedPreferences preferences;
-
 
 
     @Override
@@ -103,6 +105,7 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
      *
      * @param msg
      */
+    @SuppressLint("ShowToast")
     public void showToast(String msg) {
         if (mToast == null) {
             mToast = Toast.makeText(mActivity, msg, Toast.LENGTH_SHORT); // getApplicationContext()
@@ -130,7 +133,6 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
             e.printStackTrace();
         }
     }
-
 
 
 }

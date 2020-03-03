@@ -1,112 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:padding="25dp"
-    android:layout_height="match_parent"
-    android:background="@mipmap/bg_login">
-<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="100sp">
-    <TextView
-        android:id="@+id/login_version_tv"
-        android:text="@string/_1_0_0"
-        android:textColor="#FFFFFF"
-        android:gravity="end"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_login"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100sp">
+
+        <TextView
+            android:id="@+id/login_version_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:text="@string/_1_0_0"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
 
 
     <EditText
         android:id="@+id/login_userid_et"
-        android:hint="@string/admin"
-        android:drawableLeft="@mipmap/ic_userid"
-        android:drawableStart="@mipmap/ic_userid"
-        android:background="@drawable/shape"
-        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="40sp" />
+        android:layout_height="40sp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/shape"
+        android:drawableStart="@mipmap/ic_userid"
+        android:hint="@string/admin"
+        tools:ignore="Autofill,TextFields" />
+
     <EditText
 
         android:id="@+id/login_password_et"
-        android:hint="@string/_00000000"
-        android:background="@drawable/shape"
-        android:drawableLeft="@mipmap/ic_password"
-        android:drawableStart="@mipmap/ic_password"
-        android:text=""
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
         android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="40sp" />
+        android:background="@drawable/shape"
+        android:drawableStart="@mipmap/ic_password"
+        android:hint="@string/_00000000"
+        android:text=""
+        tools:ignore="Autofill,TextFields" />
+
     <LinearLayout
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Switch
-            android:id="@+id/login_rememberpassword_sbtn"
-            android:textOn="@string/s_start"
-            android:layout_width="0dp"
-            android:layout_weight="1.5"
-            android:layout_height="wrap_content"
-            android:checked="false" />
-        <TextView
-            android:layout_marginLeft="10dp"
-            android:layout_marginStart="10dp"
-            android:text="@string/tv_remember_pswd"
-            android:textSize="16sp"
-            android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
 
         <Switch
-            android:layout_marginLeft="15dp"
-            android:layout_marginStart="15dp"
-            android:id="@+id/login_autologin_sbtn"
-            android:textOn="@string/s_start"
+            android:id="@+id/login_rememberpassword_sbtn"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1.5"
-            android:layout_height="wrap_content" />
+            android:checked="false"
+            android:textOn="@string/s_start" />
+
         <TextView
-            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/tv_remember_pswd"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/login_autologin_sbtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_weight="1.5"
+            android:textOn="@string/s_start" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@string/tv_login_zidong"
-            android:textSize="16sp"
             android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    <Button
-        android:text="@string/btn_login"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:background="@drawable/bg_alibuybutton"
-        android:id="@+id/login_in_btn"
-        android:layout_marginTop="40dp"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <Button
-            android:layout_marginLeft="15sp"
-            android:layout_marginStart="15sp"
-            android:text="@string/btn_exit_"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/bg_alibuybutton"
-            android:id="@+id/login_out_btn"
-            android:layout_marginTop="40dp"
+            android:id="@+id/login_in_btn"
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content" />
+            android:background="@drawable/bg_alibuybutton"
+            android:text="@string/btn_login"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/login_out_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_alibuybutton"
+            android:text="@string/btn_exit_"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
 

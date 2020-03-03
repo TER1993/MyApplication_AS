@@ -8,7 +8,8 @@ import com.speedata.xu.myapplication.R;
 import com.speedata.xu.myapplication.base.BaseFragment;
 
 /**
- * Created by xu on 2016/4/14.
+ * @author xu
+ * @date 2016/4/14
  */
 public class GoodsMessageFragment extends BaseFragment implements View.OnClickListener {
     @Override
@@ -23,10 +24,10 @@ public class GoodsMessageFragment extends BaseFragment implements View.OnClickLi
 
     @Override
     public void findById(View view) {
-        tvNum = (TextView) view.findViewById(R.id.goods_num_tv);
-        tvName = (TextView) view.findViewById(R.id.goods_name_tv);
-        tvPrice = (TextView) view.findViewById(R.id.goods_price_tv);
-        btnGoodsFragment = (Button) view.findViewById(R.id.goods_message_btn);
+        tvNum = view.findViewById(R.id.goods_num_tv);
+        tvName = view.findViewById(R.id.goods_name_tv);
+        tvPrice = view.findViewById(R.id.goods_price_tv);
+        btnGoodsFragment = view.findViewById(R.id.goods_message_btn);
 
         btnGoodsFragment.setOnClickListener(this);
         tvNum.setText("");
@@ -40,7 +41,7 @@ public class GoodsMessageFragment extends BaseFragment implements View.OnClickLi
         String gnumber = getArguments().getString("Gnumber");
         String gname = getArguments().getString("Gname");
         String gprice = getArguments().getString("Gprice");
-    //    String gcount = getArguments().getString("Gcount");
+        //    String gcount = getArguments().getString("Gcount");
 
         tvNum.setText(gnumber);
         tvName.setText(gname);

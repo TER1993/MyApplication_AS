@@ -6,19 +6,20 @@
 
     <TextView
         android:id="@+id/goods_name_tv"
-        android:textColor="#000000"
-        android:text="@string/tv_goods_names"
-        android:textSize="25sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/tv_goods_names"
+        android:textColor="#000000"
+        android:textSize="25sp"
 
         />
+
     <TextView
         android:id="@+id/goods_num_tv"
-        android:text="@string/tv_goods_number"
-        android:textSize="22sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/tv_goods_number"
+        android:textSize="22sp"
 
         />
 

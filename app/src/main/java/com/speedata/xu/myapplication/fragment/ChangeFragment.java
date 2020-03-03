@@ -27,13 +27,15 @@ import com.speedata.xu.myapplication.utils.ToolCommon;
 import java.util.List;
 
 /**
- * Created by xu on 2016/4/7.
+ * @author xu
+ * @date 2016/4/7
  */
 public class ChangeFragment extends BaseScanFragment implements View.OnClickListener {
     @Override
     public int setFragmentLayout() {
         return R.layout.change_frag;
     }
+
     private EditText etInput;
     private RadioButton rbtnSearch;
     private RadioButton rbtnAdd;
@@ -60,15 +62,15 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
         baseInforDao = new BaseInforDao(mContext);
         application = (CustomerApplication) mActivity.getApplication();
 
-        etInput = (EditText) view.findViewById(R.id.change_input_et);
-        rbtnSearch = (RadioButton) view.findViewById(R.id.change_search_rbtn);
-        rbtnAdd = (RadioButton) view.findViewById(R.id.change_add_rbtn);
-        btnConfirm = (Button) view.findViewById(R.id.change_confirm_btn);
-        TextView tvCheckChange = (TextView) view.findViewById(R.id.change_check_tv);
-        tvDetailed = (TextView) view.findViewById(R.id.change_detailed_tv);
-        tvNumberCount = (TextView) view.findViewById(R.id.change_number_tv);
-        lvchange = (ListView) view.findViewById(R.id.change_list_lv);
-        btnSubChange = (Button) view.findViewById(R.id.change_subchange_btn);
+        etInput = view.findViewById(R.id.change_input_et);
+        rbtnSearch = view.findViewById(R.id.change_search_rbtn);
+        rbtnAdd = view.findViewById(R.id.change_add_rbtn);
+        btnConfirm = view.findViewById(R.id.change_confirm_btn);
+        TextView tvCheckChange = view.findViewById(R.id.change_check_tv);
+        tvDetailed = view.findViewById(R.id.change_detailed_tv);
+        tvNumberCount = view.findViewById(R.id.change_number_tv);
+        lvchange = view.findViewById(R.id.change_list_lv);
+        btnSubChange = view.findViewById(R.id.change_subchange_btn);
 
 
         String cname = getArguments().getString("C2checkName");
@@ -99,13 +101,13 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
                     Toast.makeText(mContext, R.string.change_number_input, Toast.LENGTH_SHORT).show();
                     return;
                 }
-   //             String ctime = getArguments().getString("C2checkTime");
+                //             String ctime = getArguments().getString("C2checkTime");
 
-  //              checkDetailInfors=checkDetailInforDao.imQueryList("CheckID=?",new String[]{ctime});
+                //              checkDetailInfors=checkDetailInforDao.imQueryList("CheckID=?",new String[]{ctime});
 
                 List<CheckDetailInfor> checkDetailInforlist;
                 String ctime = getArguments().getString("C2checkTime");
-                checkDetailInforlist = checkDetailInforDao.imQueryList("CheckID=? and GoodsNum=?", new String[]{ctime,input});
+                checkDetailInforlist = checkDetailInforDao.imQueryList("CheckID=? and GoodsNum=?", new String[]{ctime, input});
 
                 if (checkDetailInforlist.size() == 0) {
 
@@ -137,7 +139,6 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
 
                     String ctime = getArguments().getString("C2checkTime");
 
-                       
 
                     CheckDetailInfor cbean = new CheckDetailInfor();
                     cbean.setGoodsCount(getString(R.string.number_1));
@@ -158,7 +159,7 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
 
                 String ctime = getArguments().getString("C2checkTime");
 
-             
+
                 BaseInfor bean;
                 bean = baseInfors.get(0);
                 CheckDetailInfor cbean = new CheckDetailInfor();
@@ -172,7 +173,6 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
                 checkDetailInfors.add(cbean);
                 adapter.notifyDataSetChanged();
                 Toast.makeText(mContext, R.string.change_success_add, Toast.LENGTH_SHORT).show();
-
 
 
             }
@@ -191,10 +191,9 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
     }
 
 
-
     private void setAdapterMethod() {
         etInput.setText("");
-       // final MyDateAndTime myDateAndTime=new MyDateAndTime();
+        // final MyDateAndTime myDateAndTime=new MyDateAndTime();
         final String time = MyDateAndTime.getTimeString();
 
         adapter = new CommonAdapter<CheckDetailInfor>(mActivity, checkDetailInfors, R.layout
@@ -214,8 +213,9 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
                 TextView tvAdd = helper.getView(R.id.check_add_tv);
 
                 tvAdd.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
-                        
+
                         CheckDetailInfor bean;
                         bean = checkDetailInfors.get(position);
                         String count = bean.getGoodsCount();
@@ -243,9 +243,10 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
 
                 TextView tvSub = helper.getView(R.id.check_sub_tv);
 
-                tvSub.setOnClickListener(new  TextView.OnClickListener() {
+                tvSub.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
-                        
+
                         CheckDetailInfor bean;
                         bean = checkDetailInfors.get(position);
                         String count = bean.getGoodsCount();
@@ -272,13 +273,13 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
                         tvNumberCount.setText(count);
 
 
-
                     }
                 });
 
                 TextView tvDelete = helper.getView(R.id.check_delete_tv);
 
                 tvDelete.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
 
                         CheckDetailInfor bean;
@@ -300,7 +301,7 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
 
                 TextView tvPrice = helper.getView(R.id.check_price_tv);
                 TextView tvCount = helper.getView(R.id.check_sum_tv);
-                if (item.getGoodsPrice().equals("0") && item.getGoodsCount().equals("0")) {
+                if ("0".equals(item.getGoodsPrice()) && "0".equals(item.getGoodsCount())) {
                     tvCount.setVisibility(View.INVISIBLE);
                     tvAdd.setVisibility(View.INVISIBLE);
                     tvSub.setVisibility(View.INVISIBLE);
@@ -319,6 +320,7 @@ public class ChangeFragment extends BaseScanFragment implements View.OnClickList
     }
 
 
+    @Override
     public void onGetBarcode(String barcode) {
         barcode = barcode.replace("\n", "").replace("\u0000", "").replace("\r", "");
         etInput.setText(barcode);

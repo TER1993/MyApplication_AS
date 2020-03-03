@@ -19,9 +19,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * Created by xu on 2016/4/18.
+ *
+ * @author xu
+ * @date 2016/4/18
  */
 public class FileUtils {
     public int outCount;
@@ -36,6 +39,7 @@ public class FileUtils {
         File file = new File(path);
         int x = 0;
         int y = 0;
+        int z = 0;
         try {
             InputStream instream = new FileInputStream(file);
             InputStreamReader inputreader = new InputStreamReader(instream, "GBK"); //编码
@@ -67,7 +71,7 @@ public class FileUtils {
                     x = x + 1;
                     y = y + 1;
                     if (x == 1000) { //x==1000
-
+                        Log.d("TestFile", String.valueOf(++z));
                         baseInforDao.imInsertList(listResult);
                         listResult.clear();
                         x = 0;
@@ -123,7 +127,7 @@ public class FileUtils {
         } finally {
             try {
                 // 关闭文件流
-                bw.close();
+                Objects.requireNonNull(bw).close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

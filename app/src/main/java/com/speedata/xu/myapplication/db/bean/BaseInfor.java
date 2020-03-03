@@ -4,10 +4,12 @@ import com.elsw.base.db.orm.annotation.Column;
 import com.elsw.base.db.orm.annotation.Table;
 
 /**
- * Created by Administrator on 2016/2/26.
+ *
+ * @author Administrator
+ * @date 2016/2/26
  */
 @Table(name = "BaseInfor")
-public  class BaseInfor { //商品表
+public class BaseInfor { //商品表
 
     @Column(name = "GoodsCount")
     private String GoodsCount; //货品数量
@@ -59,7 +61,7 @@ public  class BaseInfor { //商品表
         return "BaseInfor [GoodsNum=" + GoodsNum
                 + ", GoodsName=" + GoodsName + '\''
                 + ", GoodsPrice=" + GoodsPrice + '\''
-                + ", GoodsCount=" + GoodsCount  + '\''
+                + ", GoodsCount=" + GoodsCount + '\''
                 + "]";
     }
 

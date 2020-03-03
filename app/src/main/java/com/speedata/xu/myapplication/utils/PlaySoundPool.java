@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -9,8 +10,12 @@ import com.speedata.xu.myapplication.R;
 
 import java.util.HashMap;
 
+/**
+ * @author xuyan
+ */
 public class PlaySoundPool {
 
+	@SuppressLint("StaticFieldLeak")
 	private static PlaySoundPool playSoundPool;
 	private Context context;
 	private SoundPool soundPool; // 定义SoundPool 对象

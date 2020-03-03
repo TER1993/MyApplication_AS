@@ -14,7 +14,8 @@ import com.speedata.xu.myapplication.db.bean.BaseTest;
 import com.speedata.xu.myapplication.db.dao.BaseTestDao;
 
 /**
- * Created by xu on 2016/4/8.
+ * @author xu
+ * @date 2016/4/8
  */
 public class ReviseFragment extends BaseFragment implements View.OnClickListener {
     @Override
@@ -30,19 +31,20 @@ public class ReviseFragment extends BaseFragment implements View.OnClickListener
     private Context mContext;
     private BaseTestDao baseTestDao;
     private CustomerApplication application;
+
     @Override
     public void findById(View view) {
 
         mContext = mActivity;
         application = (CustomerApplication) mActivity.getApplication();
         baseTestDao = new BaseTestDao(mContext);
-        TextView tvUsername = (TextView) view.findViewById(R.id.revise_username_tv);
-        etOldPassword = (EditText) view.findViewById(R.id.revise_oldpassword_et);
-        etNewPassword = (EditText) view.findViewById(R.id.revise_newpassword_et);
-        etConfirmPassword = (EditText) view.findViewById(R.id.revise_confirmpassword_et);
-        btnSubmit = (Button) view.findViewById(R.id.revise_submit_btn);
+        TextView tvUsername = view.findViewById(R.id.revise_username_tv);
+        etOldPassword = view.findViewById(R.id.revise_oldpassword_et);
+        etNewPassword = view.findViewById(R.id.revise_newpassword_et);
+        etConfirmPassword = view.findViewById(R.id.revise_confirmpassword_et);
+        btnSubmit = view.findViewById(R.id.revise_submit_btn);
         btnSubmit.setOnClickListener(this);
-        btnBack = (Button) view.findViewById(R.id.revise_back_btn);
+        btnBack = view.findViewById(R.id.revise_back_btn);
         btnBack.setOnClickListener(this);
 
         String username = application.getID();

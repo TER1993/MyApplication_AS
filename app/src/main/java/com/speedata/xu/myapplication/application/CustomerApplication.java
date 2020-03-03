@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.application;
 
+import android.annotation.SuppressLint;
 import android.app.Application;
 
 import com.speedata.xu.myapplication.db.bean.BaseInfor;
@@ -7,7 +8,24 @@ import com.speedata.xu.myapplication.db.bean.CheckDetailInfor;
 
 import java.util.List;
 
+/**
+ * @author xuyan
+ */
 public class CustomerApplication extends Application {
+
+    @SuppressLint("StaticFieldLeak")
+    private static CustomerApplication sInstance;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        sInstance = this;
+
+    }
+
+    public static CustomerApplication getInstance() {
+        return sInstance;
+    }
 
 
     private int bposition = -1;
@@ -20,11 +38,12 @@ public class CustomerApplication extends Application {
     private String mID;
     private String pswd;
     private int changeuser = 1;
-    private  CheckDetailInfor c;
+    private CheckDetailInfor c;
 
     public int getChangeuser() {
         return changeuser;
     }
+
     public void setChangeuser(int num) {
         this.changeuser = num;
     }
@@ -33,6 +52,7 @@ public class CustomerApplication extends Application {
     public void setCheckDetailInfo2(CheckDetailInfor checkDetailInfor1) {
         this.c = checkDetailInfor1;
     }
+
     public CheckDetailInfor getCheckDetailInfor2() {
         return c;
     }
@@ -46,9 +66,11 @@ public class CustomerApplication extends Application {
         this.mID = id;
 
     }
+
     public void setPswd(String pswd) {
         this.pswd = pswd;
     }
+
     public String getPswd() {
         return pswd;
     }
@@ -56,12 +78,15 @@ public class CustomerApplication extends Application {
     public void setTxtName(String txtName) {
         this.txtName = txtName;
     }
+
     public String getTxtName() {
         return txtName;
     }
+
     public void setCheckTime(String checkTime) {
         this.checkTime = checkTime;
     }
+
     public String getCheckTime() {
         return checkTime;
     }
@@ -69,15 +94,16 @@ public class CustomerApplication extends Application {
     public void setCheckDetailInfo(CheckDetailInfor checkDetailInfor1) {
         this.checkDetailInfor = checkDetailInfor1;
     }
+
     public CheckDetailInfor getCheckDetailInfor() {
         return checkDetailInfor;
     }
 
 
-
     public int getBposition() {
         return bposition;
     }
+
     public void setBposition(int num) {
         this.bposition = num;
     }
@@ -86,6 +112,7 @@ public class CustomerApplication extends Application {
     public int getAposition() {
         return aposition;
     }
+
     public void setAposition(int num) {
         this.aposition = num;
     }
@@ -93,6 +120,7 @@ public class CustomerApplication extends Application {
     public List<BaseInfor> getList() {
         return list;
     }
+
     public void setList(List<BaseInfor> list1) {
         this.list = list1;
     }
@@ -100,10 +128,10 @@ public class CustomerApplication extends Application {
     public List<BaseInfor> getBaseInfor2() {
         return blist;
     }
+
     public void setBaseInfo2(List<BaseInfor> list1) {
         this.blist = list1;
     }
-
 
 
 }

@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -26,7 +27,8 @@ import java.io.File;
 import java.util.List;
 
 /**
- * Created by xu on 2016/4/21.
+ * @author xu
+ * @date 2016/4/21
  */
 public class LoginActivity extends Activity implements View.OnClickListener {
     private EditText etUserID;
@@ -46,17 +48,17 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         Context mContext = this;
         baseTestDao = new BaseTestDao(mContext);
         application = (CustomerApplication) getApplication();
-        etUserID = (EditText) findViewById(R.id.login_userid_et);
-        etPassword = (EditText) findViewById(R.id.login_password_et);
-        TextView tvVersion = (TextView) findViewById(R.id.login_version_tv);
+        etUserID = findViewById(R.id.login_userid_et);
+        etPassword = findViewById(R.id.login_password_et);
+        TextView tvVersion = findViewById(R.id.login_version_tv);
         tvVersion.setText(getVersion());
 
-        Switch sbtnAutoLogin = (Switch) findViewById(R.id.login_autologin_sbtn);
-        Switch sbtnRememberPassword = (Switch) findViewById(R.id.login_rememberpassword_sbtn);
+        Switch sbtnAutoLogin = findViewById(R.id.login_autologin_sbtn);
+        Switch sbtnRememberPassword = findViewById(R.id.login_rememberpassword_sbtn);
 
 
-        btnLogin = (Button) findViewById(R.id.login_in_btn);
-        btnFinish = (Button) findViewById(R.id.login_out_btn);
+        btnLogin = findViewById(R.id.login_in_btn);
+        btnFinish = findViewById(R.id.login_out_btn);
 
 
         btnLogin.setOnClickListener(this);
@@ -78,7 +80,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         newFile();
 
 
-        SharedPreferences sp = getSharedPreferences("users", MODE_WORLD_READABLE);
+        SharedPreferences sp = getSharedPreferences("users", MODE_PRIVATE);
         ed = sp.edit();
         if (sp.getBoolean("ISCHECK", false)) {
             sbtnRememberPassword.setChecked(true);
@@ -90,13 +92,14 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         }
 
         sbtnRememberPassword.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @SuppressLint("ApplySharedPref")
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 ed.putBoolean("ISCHECK", isChecked);
                 ed.commit();
             }
         });
-        Boolean value1 = sp.getBoolean("AUTO_ISCHECK", false);
+        boolean value1 = sp.getBoolean("AUTO_ISCHECK", false);
         sbtnAutoLogin.setChecked(value1);
         sbtnAutoLogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -156,7 +159,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 return;
             }
             BaseTest bean = baseTests.get(0);
-            Boolean result = bean.getPassWord().equals(password);
+            boolean result = bean.getPassWord().equals(password);
             if (!result) {
                 Toast.makeText(this, R.string.login_wrong_password, Toast.LENGTH_SHORT).show();
                 return;
@@ -178,7 +181,6 @@ public class LoginActivity extends Activity implements View.OnClickListener {
         }
 
     }
-
 
 
     /**

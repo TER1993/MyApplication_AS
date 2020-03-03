@@ -14,7 +14,9 @@ import com.speedata.xu.myapplication.db.dao.BaseTestDao;
 import java.util.List;
 
 /**
- * Created by xu on 2016/4/8.
+ *
+ * @author xu
+ * @date 2016/4/8
  */
 public class AddUserFragment extends BaseFragment implements View.OnClickListener {
 
@@ -36,12 +38,12 @@ public class AddUserFragment extends BaseFragment implements View.OnClickListene
         mContext = mActivity;
         baseTestDao = new BaseTestDao(mContext);
 
-        etUsername = (EditText) view.findViewById(R.id.adduser_username_et);
-        etPassword = (EditText) view.findViewById(R.id.adduser_password_et);
-        etConfirmPassword = (EditText) view.findViewById(R.id.adduser_confirmpassword_et);
-        btnSubmit = (Button) view.findViewById(R.id.adduser_submit_btn);
+        etUsername = view.findViewById(R.id.adduser_username_et);
+        etPassword = view.findViewById(R.id.adduser_password_et);
+        etConfirmPassword = view.findViewById(R.id.adduser_confirmpassword_et);
+        btnSubmit = view.findViewById(R.id.adduser_submit_btn);
         btnSubmit.setOnClickListener(this);
-        btnBack = (Button) view.findViewById(R.id.adduser_back_btn);
+        btnBack = view.findViewById(R.id.adduser_back_btn);
         btnBack.setOnClickListener(this);
     }
 

@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
@@ -9,8 +10,10 @@ import com.speedata.xu.myapplication.R;
 import com.speedata.xu.myapplication.fragment.CheckFirstFragment;
 
 /**
- * Created by xu on 2016/4/7.
+ * @author xu
+ * @date 2016/4/7
  */
+@SuppressLint("Registered")
 public class ConActivity extends Activity {
 
 

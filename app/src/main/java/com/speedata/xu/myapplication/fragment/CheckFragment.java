@@ -28,7 +28,8 @@ import com.speedata.xu.myapplication.utils.ToolCommon;
 import java.util.List;
 
 /**
- * Created by xu on 2016/4/7.
+ * @author xu
+ * @date 2016/4/7
  */
 public class CheckFragment extends BaseScanFragment implements View.OnClickListener {
     public CheckFragment() {
@@ -57,8 +58,6 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
     private FloorInforDao floorInforDao;
 
 
-
-
     @Override
     public void findById(View view) {
 
@@ -67,20 +66,19 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
         checkDetailInforDao = new CheckDetailInforDao(mContext);
         floorInforDao = new FloorInforDao(mContext);
         application = (CustomerApplication) mActivity.getApplication();
-        etNum = (EditText) view.findViewById(R.id.check_num_et);
-        btnSearch = (Button) view.findViewById(R.id.check_search_btn);
-        btnSave = (Button) view.findViewById(R.id.check_save_btn);
-        btnFloor = (Button) view.findViewById(R.id.check_floor_btn);
-        lvcheck = (ListView) view.findViewById(R.id.check_list_lv);
+        etNum = view.findViewById(R.id.check_num_et);
+        btnSearch = view.findViewById(R.id.check_search_btn);
+        btnSave = view.findViewById(R.id.check_save_btn);
+        btnFloor = view.findViewById(R.id.check_floor_btn);
+        lvcheck = view.findViewById(R.id.check_list_lv);
         //
         btnSearch.setOnClickListener(this);
         btnSave.setOnClickListener(this);
         btnFloor.setOnClickListener(this);
 
         String checkId = getArguments().getString("CcheckTime");
-        checkDetailInfors = checkDetailInforDao.imQueryList("CheckID=?",new String[]{checkId});
+        checkDetailInfors = checkDetailInforDao.imQueryList("CheckID=?", new String[]{checkId});
         List<FloorInfor> floorInforList = floorInforDao.imQueryList("CheckID=?", new String[]{checkId});
-
 
 
         floorNumber = floorInforList.get(0).getFloor();
@@ -105,12 +103,12 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
             saveData();
             closeFragment();
         } else if (v == btnFloor) {
-        //处理货层
+            //处理货层
             int floorInt = Integer.parseInt(floorNumber);
             floorInt++;
             String floor;
             if (floorInt < 10) {
-                floor=getString(R.string.number_0) + floorInt;
+                floor = getString(R.string.number_0) + floorInt;
             } else {
                 floor = floorInt + "";
             }
@@ -148,7 +146,7 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
         floorInforDao.imInsert(fbean);
 
         if (cbean == null) {
-            Toast.makeText(mContext, R.string.check_change_null, Toast.LENGTH_SHORT);
+            Toast.makeText(mContext, R.string.check_change_null, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -187,7 +185,6 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
 
             }
         }
-
 
 
         String checkid = getArguments().getString("CcheckTime");
@@ -237,8 +234,6 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                 helper.getView(R.layout.check_item);
 
 
-
-
                 TextView tvCount = helper.getView(R.id.check_sum_tv);
 
                 tvCount.setOnClickListener(new View.OnClickListener() {
@@ -263,6 +258,7 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                 TextView tvAdd = helper.getView(R.id.check_add_tv);
 
                 tvAdd.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
 
                         CheckDetailInfor bean;
@@ -291,6 +287,7 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                 TextView tvSub = helper.getView(R.id.check_sub_tv);
 
                 tvSub.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
 
 
@@ -322,6 +319,7 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                 TextView tvDelete = helper.getView(R.id.check_delete_tv);
 
                 tvDelete.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
                         CheckDetailInfor bean;
                         bean = checkDetailInfors.get(position);
@@ -342,7 +340,7 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                 });
 
                 TextView tvPrice = helper.getView(R.id.check_price_tv);
-                if (item.getGoodsPrice().equals("0") && item.getGoodsCount().equals("0")) {
+                if ("0".equals(item.getGoodsPrice()) && "0".equals(item.getGoodsCount())) {
                     tvCount.setVisibility(View.INVISIBLE);
                     tvAdd.setVisibility(View.INVISIBLE);
                     tvSub.setVisibility(View.INVISIBLE);
@@ -353,7 +351,6 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                     tvSub.setVisibility(View.VISIBLE);
                     tvPrice.setVisibility(View.VISIBLE);
                 }
-
 
 
             }
@@ -402,10 +399,11 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                     mDialog.dismiss();
 
                     break;
+                default:
+                    break;
             }
         }
     }
-
 
 
     /**
@@ -436,6 +434,8 @@ public class CheckFragment extends BaseScanFragment implements View.OnClickListe
                     // 取消显示对话框
                     mDialog.dismiss();
 
+                    break;
+                default:
                     break;
             }
         }

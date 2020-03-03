@@ -27,7 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by xu on 2016/4/22.
+ * @author xu
+ * @date 2016/4/22
  */
 public class ChangeFirstFragment extends BaseFragment implements View.OnClickListener {
 
@@ -55,10 +56,10 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
 
     @Override
     public void findById(View view) {
-        lvCheck = (ListView) view.findViewById(R.id.inventory_list_lv);
-        tvNumber = (TextView) view.findViewById(R.id.inventory_number_tv);
-        btnNew = (Button) view.findViewById(R.id.inventory_new_btn);
-        tvBluetooth = (TextView) view.findViewById(R.id.inventory_bluetooth_tv);
+        lvCheck = view.findViewById(R.id.inventory_list_lv);
+        tvNumber = view.findViewById(R.id.inventory_number_tv);
+        btnNew = view.findViewById(R.id.inventory_new_btn);
+        tvBluetooth = view.findViewById(R.id.inventory_bluetooth_tv);
         mContext = mActivity;
         checkInforDao = new CheckInforDao(mContext);
         checkDetailInforDao = new CheckDetailInforDao(mContext);
@@ -69,8 +70,8 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
         tvBluetooth.setText(R.string.change_print_button);
         btnNew.setText(R.string.change_new_button);
 
-        btnExplore = (Button) view.findViewById(R.id.inventory_explore_btn);
-        btnDel = (TextView) view.findViewById(R.id.inventory_del_tv);
+        btnExplore = view.findViewById(R.id.inventory_explore_btn);
+        btnDel = view.findViewById(R.id.inventory_del_tv);
         btnExplore.setOnClickListener(this);
         btnDel.setOnClickListener(this);
         btnExplore.setText(R.string.tip_explore);
@@ -80,7 +81,6 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
         checkInforList = getCheckListData();
 
         setAdapterMethod();
-
 
 
         lvCheck.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -115,7 +115,7 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
                 application.setCheckTime(checktime);
 
                 DialogButtonOnLongClickListener dialogButtonOnClickListener = new DialogButtonOnLongClickListener();
-                
+
 //                mDialog = new AlertDialog.Builder(mActivity)
 //                        .setTitle(R.string.change_list_dialog)
 //                        .setPositiveButton(R.string.change_export_button, dialogButtonOnClickListener)
@@ -126,7 +126,6 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
                         .setTitle(R.string.dialog_change)
                         .setPositiveButton(R.string.dialog_return, dialogButtonOnClickListener)
                         .show();
-
 
 
                 return true;
@@ -179,8 +178,6 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
     }
 
 
-
-
     /**
      * 长按item时的对话框的按钮点击事件
      */
@@ -210,9 +207,10 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
                     mDialog.dismiss();
                     checkInforList = getCheckListData();
                     setAdapterMethod();
-                    Toast.makeText(mContext,getString(R.string.change_del_list) + application.getTxtName(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, getString(R.string.change_del_list) + application.getTxtName(), Toast.LENGTH_SHORT).show();
                     break;
-
+                default:
+                    break;
             }
         }
     }
@@ -240,10 +238,9 @@ public class ChangeFirstFragment extends BaseFragment implements View.OnClickLis
     //创建导出文件的名字
     private String createFilename() throws IOException {
 
-        return getString(R.string.export_path_) + application.getTxtName()+getString(R.string.txt);
+        return getString(R.string.export_path_) + application.getTxtName() + getString(R.string.txt);
 
     }
-
 
 
 }

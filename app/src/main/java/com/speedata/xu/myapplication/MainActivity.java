@@ -21,6 +21,9 @@ import com.speedata.xu.myapplication.fragment.GoodsFragment;
 import com.speedata.xu.myapplication.fragment.SettingFragment;
 
 
+/**
+ * @author xuyan
+ */
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -34,36 +37,33 @@ public class MainActivity extends AppCompatActivity
     private SettingFragment settingFragment;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(getString(R.string.main_counting));
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
 
         setDefaultFragment();
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
 
-
-            drawer.setDrawerListener(toggle);
+        drawer.setDrawerListener(toggle);
 
 
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
 
         assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
-
 
 
         // 创建退出时的对话框，此处根据需要显示的先后顺序决定按钮应该使用Neutral、Negative或Positive
@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity
 
                     finish();
                     break;
+                default:
+                    break;
             }
         }
     }
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         assert drawer != null;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
@@ -155,37 +157,41 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_goods) {
             setTitle(getString(R.string.goods));
-            if (null == goodsFragment)
+            if (null == goodsFragment) {
                 goodsFragment = new GoodsFragment();
+            }
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.container, goodsFragment).commit();
 
         } else if (id == R.id.nav_check) {
             setTitle(getString(R.string.check));
-            if (null == checkFirstFragment)
+            if (null == checkFirstFragment) {
                 checkFirstFragment = new CheckFirstFragment();
+            }
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.container, checkFirstFragment).commit();
 
         } else if (id == R.id.nav_change) {
             setTitle(getString(R.string.change));
-            if (null == changeFirstFragment)
+            if (null == changeFirstFragment) {
                 changeFirstFragment = new ChangeFirstFragment();
+            }
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.container, changeFirstFragment).commit();
 
         } else if (id == R.id.nav_setting) {
             setTitle(getString(R.string.setting));
-            if (null == settingFragment)
+            if (null == settingFragment) {
                 settingFragment = new SettingFragment();
+            }
             FragmentManager fragmentManager = getFragmentManager();
             fragmentManager.beginTransaction().replace(R.id.container, settingFragment).commit();
 
-        }  else if (id == R.id.nav_exit) {
+        } else if (id == R.id.nav_exit) {
             finish();
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
         assert drawer != null;
         drawer.closeDrawer(GravityCompat.START);
         return true;

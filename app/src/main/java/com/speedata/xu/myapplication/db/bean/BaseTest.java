@@ -4,17 +4,18 @@ import com.elsw.base.db.orm.annotation.Column;
 import com.elsw.base.db.orm.annotation.Table;
 
 /**
- * Created by Administrator on 2016/2/26.
+ *
+ * @author Administrator
+ * @date 2016/2/26
  */
 @Table(name = "BaseTest")
-public  class BaseTest { //user表
+public class BaseTest { //user表
 
     @Column(name = "UserID")
     private String UserID; //用户名
 
     @Column(name = "PassWord")
     private String PassWord; //密码
-
 
 
     public String getUserID() {

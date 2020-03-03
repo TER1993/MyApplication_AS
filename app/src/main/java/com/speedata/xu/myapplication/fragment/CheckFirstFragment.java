@@ -1,5 +1,6 @@
 package com.speedata.xu.myapplication.fragment;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -53,13 +54,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
- * Created by xu on 2016/4/21.
+ * @author xu
+ * @date 2016/4/21
  */
 public class CheckFirstFragment extends BaseFragment implements View.OnClickListener {
-
 
 
     //蓝牙打印打印机连接
@@ -71,7 +73,7 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     private IntentFilter bluDisconnectFilter;
     public static PrinterInstance myPrinter;
     private static BluetoothDevice mDevice;
-    private static  boolean  hasRegDisconnectReceiver = false;
+    private static boolean hasRegDisconnectReceiver = false;
     protected static final String TAG = "蓝牙打印机";
     public static boolean isConnected = false; // 蓝牙连接状态
     private ProgressDialog dialog;
@@ -104,10 +106,6 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     private TextView btnDel;
 
 
-
-
-
-
     @Override
     public int setFragmentLayout() {
 
@@ -117,10 +115,10 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     @Override
     public void findById(View view) {
 
-        lvCheck = (ListView) view.findViewById(R.id.inventory_list_lv);
-        tvNumber = (TextView) view.findViewById(R.id.inventory_number_tv);
-        btnNew = (Button) view.findViewById(R.id.inventory_new_btn);
-        tvBluetooth = (TextView) view.findViewById(R.id.inventory_bluetooth_tv);
+        lvCheck = view.findViewById(R.id.inventory_list_lv);
+        tvNumber = view.findViewById(R.id.inventory_number_tv);
+        btnNew = view.findViewById(R.id.inventory_new_btn);
+        tvBluetooth = view.findViewById(R.id.inventory_bluetooth_tv);
 
         mContext = mActivity;
         checkInforDao = new CheckInforDao(mContext);
@@ -132,9 +130,8 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
         tvBluetooth.setOnClickListener(this);
 
 
-
-        btnExplore = (Button) view.findViewById(R.id.inventory_explore_btn);
-        btnDel = (TextView) view.findViewById(R.id.inventory_del_tv);
+        btnExplore = view.findViewById(R.id.inventory_explore_btn);
+        btnDel = view.findViewById(R.id.inventory_del_tv);
         btnExplore.setOnClickListener(this);
         btnDel.setOnClickListener(this);
         btnExplore.setText(R.string.onekey_explore);
@@ -265,6 +262,7 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
                 TextView tvChange = helper.getView(R.id.inventory_change_tv);
 
                 tvChange.setOnClickListener(new TextView.OnClickListener() {
+                    @Override
                     public void onClick(View v) {
                         bean = new CheckInfor();
                         bean = checkInforList.get(position);
@@ -329,85 +327,82 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
 
         Log.i(TAG, getString(R.string.check_connect) + isConnected);
         if (!isConnected) {
-            switch (interfaceType) {
-                case 0:// kuetooth
-                    new AlertDialog.Builder(mActivity)
-                            .setTitle(R.string.str_message)
-                            .setMessage(R.string.str_connlast)
-                            .setPositiveButton(R.string.yesconn,
-                                    new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(
-                                                DialogInterface arg0, int arg1) {
-                                            // 重新连接
-                                            if (!(mBtAdapter == null)) {
-                                                // 判断设备蓝牙功能是否打开
-                                                if (!mBtAdapter.isEnabled()) {
-                                                    // 打开蓝牙功能
-                                                    Intent enableIntent = new Intent(
-                                                            BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                                                    startActivity(enableIntent);
-                                                } else {
-                                                    // mDevice
-                                                    devicesAddress = PrefUtils
-                                                            .getString(
-                                                                    mContext,
-                                                                    GlobalContants.DEVICEADDRESS,
-                                                                    "");
+            if (interfaceType == 0) {// kuetooth
+                new AlertDialog.Builder(mActivity)
+                        .setTitle(R.string.str_message)
+                        .setMessage(R.string.str_connlast)
+                        .setPositiveButton(R.string.yesconn,
+                                new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface arg0, int arg1) {
+                                        // 重新连接
+                                        if (!(mBtAdapter == null)) {
+                                            // 判断设备蓝牙功能是否打开
+                                            if (!mBtAdapter.isEnabled()) {
+                                                // 打开蓝牙功能
+                                                Intent enableIntent = new Intent(
+                                                        BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                                                startActivity(enableIntent);
+                                            } else {
+                                                // mDevice
+                                                devicesAddress = PrefUtils
+                                                        .getString(
+                                                                mContext,
+                                                                GlobalContants.DEVICEADDRESS,
+                                                                "");
 
-                                                    if (devicesAddress == null
-                                                            || devicesAddress
-                                                            .length() <= 0) {
-                                                        Toast.makeText(
-                                                                mActivity,
-                                                                R.string.check_first_blue,
-                                                                Toast.LENGTH_SHORT)
-                                                                .show();
-                                                    } else {
-                                                        connect2BlueToothdevice();
-                                                    }
+                                                if (devicesAddress == null
+                                                        || devicesAddress
+                                                        .length() <= 0) {
+                                                    Toast.makeText(
+                                                            mActivity,
+                                                            R.string.check_first_blue,
+                                                            Toast.LENGTH_SHORT)
+                                                            .show();
+                                                } else {
+                                                    connect2BlueToothdevice();
                                                 }
+                                            }
+                                        }
+
+                                    }
+                                })
+                        .setNegativeButton(R.string.str_resel,
+                                new DialogInterface.OnClickListener() {
+
+                                    @Override
+                                    public void onClick(
+                                            DialogInterface dialog,
+                                            int which) {
+                                        if (!(mBtAdapter == null)) {
+                                            // 判断设备蓝牙功能是否打开
+                                            if (!mBtAdapter.isEnabled()) {
+                                                // 打开蓝牙功能
+                                                Intent enableIntent = new Intent(
+                                                        BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                                                startActivity(enableIntent);
+                                                Intent intent = new Intent(
+                                                        mContext,
+                                                        BluetoothDeviceList.class);
+                                                startActivityForResult(
+                                                        intent,
+                                                        CONNECT_DEVICE);
+                                            } else {
+                                                Intent intent = new Intent(
+                                                        mContext,
+                                                        BluetoothDeviceList.class);
+                                                startActivityForResult(
+                                                        intent,
+                                                        CONNECT_DEVICE);
+
                                             }
 
                                         }
-                                    })
-                            .setNegativeButton(R.string.str_resel,
-                                    new DialogInterface.OnClickListener() {
 
-                                        @Override
-                                        public void onClick(
-                                                DialogInterface dialog,
-                                                int which) {
-                                            if (!(mBtAdapter == null)) {
-                                                // 判断设备蓝牙功能是否打开
-                                                if (!mBtAdapter.isEnabled()) {
-                                                    // 打开蓝牙功能
-                                                    Intent enableIntent = new Intent(
-                                                            BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                                                    startActivity(enableIntent);
-                                                    Intent intent = new Intent(
-                                                            mContext,
-                                                            BluetoothDeviceList.class);
-                                                    startActivityForResult(
-                                                            intent,
-                                                            CONNECT_DEVICE);
-                                                } else {
-                                                    Intent intent = new Intent(
-                                                            mContext,
-                                                            BluetoothDeviceList.class);
-                                                    startActivityForResult(
-                                                            intent,
-                                                            CONNECT_DEVICE);
+                                    }
 
-                                                }
-
-                                            }
-
-                                        }
-
-                                    }).show();
-                    break;
-
+                                }).show();
             }
         } else {
 
@@ -431,7 +426,6 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
             PrefUtils.setBoolean(mActivity,
                     GlobalContants.CONNECTSTATE, false);
         }
-
 
 
     }
@@ -479,6 +473,7 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
     private BroadcastReceiver boundDeviceReceiver = new BroadcastReceiver() {
+        @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
 
@@ -517,7 +512,7 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     };
 
 
-    private class ConnectThread extends Thread {
+    private static class ConnectThread extends Thread {
         @Override
         public void run() {
 
@@ -546,7 +541,8 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
                     mDialog.dismiss();
                     closeDiaolg();
                     break;
-
+                default:
+                    break;
             }
         }
     }
@@ -615,8 +611,6 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
 
-
-
     /**
      * 长按item时的对话框的按钮点击事件
      */
@@ -674,12 +668,13 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
 
                     Toast.makeText(mContext, R.string.check_print_success, Toast.LENGTH_SHORT).show();
                     break;
+                default:
+                    break;
             }
 
         }
 
     }
-
 
 
     /**
@@ -705,32 +700,31 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
 
+    /**
+     * 删除盘点单前确认的对话框的按钮点击事件
+     */
+    private class DelBeforeSure implements DialogInterface.OnClickListener {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            switch (which) {
+                case DialogInterface.BUTTON_POSITIVE: // 确定
 
-        /**
-         * 删除盘点单前确认的对话框的按钮点击事件
-         */
-        private class DelBeforeSure implements DialogInterface.OnClickListener {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                switch (which) {
-                    case DialogInterface.BUTTON_POSITIVE: // 确定
+                    checkInforDao.imDelete("CheckTime=?", new String[]{application.getCheckTime()});
+                    mDialog.dismiss();
+                    checkInforList = getCheckListData();
+                    setAdapterMethod();
+                    Toast.makeText(mContext, getString(R.string.check_del_list) + application.getTxtName(), Toast.LENGTH_SHORT).show();
 
-                        checkInforDao.imDelete("CheckTime=?", new String[]{application.getCheckTime()});
-                        mDialog.dismiss();
-                        checkInforList = getCheckListData();
-                        setAdapterMethod();
-                        Toast.makeText(mContext, getString(R.string.check_del_list) + application.getTxtName(), Toast.LENGTH_SHORT).show();
+                    break;
+                case DialogInterface.BUTTON_NEGATIVE: // 取消
+                    // 取消显示对话框
+                    mDialog.dismiss();
 
-                        break;
-                    case DialogInterface.BUTTON_NEGATIVE: // 取消
-                        // 取消显示对话框
-                        mDialog.dismiss();
+                    break;
 
-                        break;
-
-                }
             }
         }
+    }
 
 
     /**
@@ -764,7 +758,6 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
 
-
     /**
      * 一键导出盘点单前确认的对话框的按钮点击事件
      */
@@ -786,9 +779,9 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
                             FileUtils fileUtils = new FileUtils();
                             int h = fileUtils.outputfile(getOutputList(), createFilename());
                             if (h == 1) {
-                               if (i == c - 1) {
-                                   b = true;
-                               }
+                                if (i == c - 1) {
+                                    b = true;
+                                }
                             }
 
                         } catch (IOException e) {
@@ -823,11 +816,11 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
                     mDialog.dismiss();
 
                     break;
-
+                default:
+                    break;
             }
         }
     }
-
 
 
     //创建在数据库中的新盘点表
@@ -898,6 +891,7 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
             e.printStackTrace();
         }
     }
+
     //显示与关闭dialog
     public void closeDiaolg() {
         try {
@@ -911,10 +905,9 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
 
-
     //创建导出文件的名字
     public String createFilename() throws IOException {
-        return  getString(R.string.export_path_) + application.getTxtName() + getString(R.string.txt);
+        return getString(R.string.export_path_) + application.getTxtName() + getString(R.string.txt);
 
 
     }
@@ -944,10 +937,10 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
 
-
-
     // 用于接受连接状态消息的 Handler
+    @SuppressLint("HandlerLeak")
     private Handler mHandler = new Handler() {
+        @SuppressLint("HandlerLeak")
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
@@ -1013,17 +1006,14 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     };
 
 
-
-
-
-    public BroadcastReceiver myReceiver = new BroadcastReceiver()
-    {
+    public BroadcastReceiver myReceiver = new BroadcastReceiver() {
+        @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             BluetoothDevice device = intent
                     .getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
 
-            if (action.equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
+            if (Objects.requireNonNull(action).equals(BluetoothDevice.ACTION_ACL_DISCONNECTED)) {
 
                 if (device != null && myPrinter != null
                         && isConnected && device.equals(mDevice)) {
@@ -1043,8 +1033,8 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
         PrefUtils.setInt(mContext, "count3", count);
         Log.e(TAG, "" + count);
 
-        MediaPlayer player = new MediaPlayer().create(mContext, R.raw.test);
-        MediaPlayer player2 = new MediaPlayer().create(mContext, R.raw.beep);
+        MediaPlayer player = MediaPlayer.create(mContext, R.raw.test);
+        MediaPlayer player2 = MediaPlayer.create(mContext, R.raw.beep);
 
         player.start();
         player2.start();
@@ -1063,13 +1053,11 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     }
 
 
-
-
     private void getSaveState() {
 
 
         Log.d(TAG, getString(R.string.check_get_savestate));
-        
+
         isConnected = PrefUtils.getBoolean(mActivity,
                 GlobalContants.CONNECTSTATE, false);
         printerId = PrefUtils.getInt(mContext, GlobalContants.PRINTERID, 0);
@@ -1086,13 +1074,14 @@ public class CheckFirstFragment extends BaseFragment implements View.OnClickList
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode != Activity.RESULT_OK)
+        if (resultCode != Activity.RESULT_OK) {
             return;
+        }
         if (requestCode == CONNECT_DEVICE) { // 连接设备
 
             if (interfaceType == 0) {
 
-                devicesAddress = data.getExtras().getString(
+                devicesAddress = Objects.requireNonNull(data.getExtras()).getString(
                         BluetoothDeviceList.EXTRA_DEVICE_ADDRESS);
                 devicesName = data.getExtras().getString(
                         BluetoothDeviceList.EXTRA_DEVICE_NAME);

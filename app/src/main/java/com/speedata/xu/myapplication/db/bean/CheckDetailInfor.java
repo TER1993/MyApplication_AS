@@ -4,10 +4,12 @@ import com.elsw.base.db.orm.annotation.Column;
 import com.elsw.base.db.orm.annotation.Table;
 
 /**
- * Created by Administrator on 2016/2/26.
+ *
+ * @author Administrator
+ * @date 2016/2/26
  */
 @Table(name = "CheckDetailInfor")
-public  class  CheckDetailInfor { //盘点明细表
+public class CheckDetailInfor { //盘点明细表
 
     @Column(name = "GoodsCount")
     private String GoodsCount; //货品数量
@@ -26,8 +28,6 @@ public  class  CheckDetailInfor { //盘点明细表
 
     @Column(name = "CheckDetailTime")
     private String CheckDetailTime; //盘点明细时间
-
-
 
 
     public String getCheckID() {
@@ -86,7 +86,7 @@ public  class  CheckDetailInfor { //盘点明细表
                 + ", GoodsNum=" + GoodsNum + '\''
                 + ", GoodsName=" + GoodsName + '\''
                 + ", GoodsPrice=" + GoodsPrice + '\''
-                + ", GoodsCount=" + GoodsCount  + '\''
+                + ", GoodsCount=" + GoodsCount + '\''
                 + "]";
     }
 

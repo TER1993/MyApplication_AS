@@ -1,76 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    
+
     >
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    <TextView
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_check_goods"
-        />
-
-        <Button
-            android:layout_marginRight="20dp"
-            android:layout_marginEnd="20dp"
-            android:textSize="17sp"
-            android:id="@+id/check_floor_btn"
-            android:text="@string/tv_add_floor"
-            android:background="@drawable/bg_alibuybutton"
-            android:layout_width="0dp"
-            android:layout_weight="1.1"
-            android:layout_height="30dp"
-            android:textColor="#FFFFFF"
-            />
-
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <EditText
-            android:hint="@string/et_imput_scan"
 
-            android:id="@+id/check_num_et"
+        <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:layout_weight="2"
+            android:text="@string/tv_check_goods"
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
         <Button
-            android:textSize="17sp"
-            android:id="@+id/check_search_btn"
-            android:text="@string/tv_search_c"
-            android:background="@drawable/bg_alibuybutton"
+            android:id="@+id/check_floor_btn"
             android:layout_width="0dp"
-            android:layout_weight="1.1"
             android:layout_height="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/bg_alibuybutton"
+            android:text="@string/tv_add_floor"
             android:textColor="#FFFFFF"
-            />
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/check_num_et"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="@string/et_imput_scan"
+            tools:ignore="Autofill,TextFields" />
+
         <Button
-            android:layout_marginStart="5dp"
-            android:textSize="17sp"
+            android:id="@+id/check_search_btn"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/bg_alibuybutton"
+            android:text="@string/tv_search_c"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+        <Button
             android:id="@+id/check_save_btn"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/bg_alibuybutton"
             android:text="@string/tv_save"
             android:textColor="#FFFFFF"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/bg_alibuybutton"
-            android:layout_width="0dp"
-            android:layout_height="30dp"
-            android:layout_weight="1.1"/>
+            android:textSize="17sp" />
     </LinearLayout>
+
     <ListView
         android:id="@+id/check_list_lv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

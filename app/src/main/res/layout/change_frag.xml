@@ -1,129 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
 
     >
+
     <LinearLayout
 
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <EditText
             android:id="@+id/change_input_et"
-            android:textSize="16.5dp"
-            android:text=""
-            android:inputType="none"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
 
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content" />
+            android:inputType="none"
+            android:text=""
+            android:textSize="16.5dp"
+            tools:ignore="Autofill,LabelFor,SpUsage" />
+
         <RadioGroup
-            android:orientation="horizontal"
-            android:layout_weight="2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
             <RadioButton
                 android:id="@+id/change_search_rbtn"
-                android:text="@string/rb_search"
-                android:textColor="#000000"
-                android:textSize="12sp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:checked="true"
-                />
+                android:text="@string/rb_search"
+                android:textColor="#000000"
+                android:textSize="12sp" />
+
             <RadioButton
                 android:id="@+id/change_add_rbtn"
-                android:text="@string/rb_add"
-                android:textColor="#000000"
-                android:textSize="12sp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                />
+                android:text="@string/rb_add"
+                android:textColor="#000000"
+                android:textSize="12sp" />
         </RadioGroup>
+
         <Button
             android:id="@+id/change_confirm_btn"
-            android:text="@string/btn_sure"
-            android:background="@drawable/bg_alibuybutton"
-            android:textSize="15sp"
-            android:textColor="#FFFFFF"
             android:layout_width="40dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alibuybutton"
+            android:text="@string/btn_sure"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:padding="5dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
         <TextView
-            android:text="@string/tv_checklist"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/tv_checklist"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/change_check_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/b22"
-            android:textSize="20sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
-        android:padding="5dp"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
         <TextView
-            android:text="@string/tv_detail"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/tv_detail"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/change_detailed_tv"
-            android:text="@string/_1"
-            android:textSize="20sp"
             android:layout_width="120dp"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/_1"
+            android:textSize="20sp" />
 
         <TextView
-            android:text="@string/tv_count"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/tv_count"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/change_number_tv"
-            android:text="@string/_0"
-            android:textSize="20sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/_0"
+            android:textSize="20sp" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        >
+        android:layout_weight="5">
+
         <ListView
             android:id="@+id/change_list_lv"
             android:layout_width="match_parent"
-            android:layout_height="fill_parent"></ListView>
+            android:layout_height="fill_parent" />
     </LinearLayout>
 
     <Button
 
         android:id="@+id/change_subchange_btn"
-        android:text="@string/btn_sure_change"
-        android:textColor="#FFFFFF"
-        android:background="#FF0000"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        />
+        android:background="#FF0000"
+        android:text="@string/btn_sure_change"
+        android:textColor="#FFFFFF" />
 
 
 </LinearLayout>

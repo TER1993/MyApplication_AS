@@ -4,10 +4,12 @@ import com.elsw.base.db.orm.annotation.Column;
 import com.elsw.base.db.orm.annotation.Table;
 
 /**
- * Created by Administrator on 2016/2/26.
+ *
+ * @author Administrator
+ * @date 2016/2/26
  */
 @Table(name = "CheckInfor")
-public  class CheckInfor { //盘点表
+public class CheckInfor { //盘点表
 
     @Column(name = "UserID")
     private String UserID; //用户id
@@ -17,7 +19,6 @@ public  class CheckInfor { //盘点表
 
     @Column(name = "CheckTime")
     private String CheckTime; //盘点时间
-
 
 
     public String getUserID() {
@@ -49,7 +50,7 @@ public  class CheckInfor { //盘点表
     public String toString() {
         return "BaseInfor [UserID=" + UserID
                 + ", CheckName=" + CheckName + '\''
-                + ", CheckTime=" + CheckTime  + '\''
+                + ", CheckTime=" + CheckTime + '\''
                 + "]";
     }
 

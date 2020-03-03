@@ -1,7 +1,9 @@
 package com.speedata.xu.myapplication.db.bean;
 
 /**
- * Created by Administrator on 2016/3/30.
+ *
+ * @author Administrator
+ * @date 2016/3/30
  */
 public class OutputTxt {
     private String Goodsnumber;
@@ -24,6 +26,7 @@ public class OutputTxt {
     public void setGoodscount(String goodscount) {
         this.Goodscount = goodscount;
     }
+
     public String getTab() {
         return Tab;
     }
@@ -31,6 +34,7 @@ public class OutputTxt {
     public void setTab(String tab) {
         this.Tab = tab;
     }
+
     public String getEnter() {
         return Enter;
     }

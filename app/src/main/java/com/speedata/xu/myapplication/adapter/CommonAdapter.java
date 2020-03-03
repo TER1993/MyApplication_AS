@@ -9,7 +9,8 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 /**
- * Created by YJ on 15/8/3.
+ * @author YJ
+ * @date 15/8/3
  */
 
 public abstract class CommonAdapter<T> extends BaseAdapter {
@@ -22,14 +23,12 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     //添加需要的部分
 
 
-
     protected CommonAdapter(Context context, List<T> mDatas, int layoutId) {
         this.mContext = context;
         LayoutInflater mInflater = LayoutInflater.from(mContext);
         this.mDatas = mDatas;
         this.layoutId = layoutId;
     }
-
 
 
     @Override
@@ -60,7 +59,6 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     public void addItem(T item) {
         mDatas.add(item);
     }
-
 
 
 }

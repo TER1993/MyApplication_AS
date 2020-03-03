@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+/**
+ * @author xuyan
+ */
 public class ViewHolder {
 
     private final SparseArray<View> mViews;
@@ -22,7 +25,6 @@ public class ViewHolder {
 
     /**
      * 得到一个ViewHolder对象
-     *
      *
      * @param context
      * @param convertView

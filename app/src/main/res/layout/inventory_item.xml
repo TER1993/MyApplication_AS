@@ -2,52 +2,55 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal"
-    android:padding="10dp"
-    android:descendantFocusability="blocksDescendants"><!--添加这个属性-->
+    android:padding="10dp"><!--添加这个属性-->
 
     <RadioButton
-        android:visibility="gone"
-        android:paddingTop="50dp"
         android:id="@+id/inventory_choose_rbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="false" />
+        android:checked="false"
+        android:paddingTop="50dp"
+        android:visibility="gone" />
+
     <LinearLayout
-        android:padding="10dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
         <TextView
             android:id="@+id/inventory_time_tv"
-            android:textSize="15sp"
-            android:text="@string/_2016_01_02_17_51_12"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/_2016_01_02_17_51_12"
+            android:textSize="15sp" />
 
         <LinearLayout
-            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            >
+            android:paddingTop="10dp">
+
             <TextView
                 android:id="@+id/inventory_name_tv"
-                android:textSize="25sp"
-                android:textColor="#000000"
-                android:text="@string/b222"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:layout_height="wrap_content" />
+                android:text="@string/b222"
+                android:textColor="#000000"
+                android:textSize="25sp" />
+
             <TextView
-                android:gravity="center"
-                android:background="@drawable/bg_alibuybutton"
-                android:textColor="#FFFFFF"
                 android:id="@+id/inventory_change_tv"
-                android:textSize="15sp"
-                android:text="@string/change_name"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_alibuybutton"
+                android:gravity="center"
+                android:text="@string/change_name"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp" />
         </LinearLayout>
 
     </LinearLayout>
